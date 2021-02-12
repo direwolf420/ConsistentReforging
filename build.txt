@@ -1,0 +1,8 @@
+displayName = Consistent Reforging
+author = direwolf420
+version = 0.0.0.1
+hideCode = false
+hideResources = false
+includeSource = false
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, *.md
+includePDB = true
