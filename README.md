@@ -4,10 +4,10 @@
 
 Terraria Forum link: TBD
 
-The **Consistent Reforging** mod strives to improve reforging to make it less random.
+The **Consistent Reforging** mod strives to improve reforging to make it less random without being too cheaty
 
 1. Adds an "Undo" button so that you can go back to the prefix you accidently skipped while spamming reforge
-2. Prevents duplicate rolls of prefixes if they have been rolled before (by default 5, configurable)
+2. Prevents duplicate rolls of prefixes if they have been rolled before (by default the last 8, configurable)
 
 Notes:
 * Undoing costs no money

@@ -6,3 +6,4 @@ hideResources = false
 includeSource = false
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, *.md
 includePDB = true
+homepage = https://forums.terraria.org/index.php?threads/consistent-reforging.103087/

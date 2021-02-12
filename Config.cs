@@ -19,7 +19,7 @@ namespace ConsistentReforging
 		public const int RangeMax = PrefixID.Count / 2;
 		[Tooltip("Amount of prefixes that should be stored per item")]
 		[Label("Reforge History Length")]
-		[DefaultValue(5)]
+		[DefaultValue(8)]
 		[Range(RangeMin, RangeMax)]
 		[Slider]
 		public int ReforgeHistoryLength;
