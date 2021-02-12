@@ -48,13 +48,14 @@ namespace ConsistentReforging
 		{
 			reforgeInterface = null;
 			uiState = null;
+			_lastUpdateUiGameTime = null;
 		}
 
 		private bool HandlePrefixToItemIfItHasNoHistory(On.Terraria.Item.orig_Prefix orig, Item self, int pre)
 		{
 			bool ret = orig(self, pre);
 
-			if (pre == -2) return ret; //reforging, as this code should only run for non-reforge contexts
+			if (pre == -2) return ret; //Reforging, as this code should only run for non-reforge contexts
 
 			if (self.IsAir) return ret;
 

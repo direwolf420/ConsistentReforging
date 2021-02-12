@@ -12,13 +12,13 @@ namespace ConsistentReforging
 	{
 		public static bool revertingReforge = false;
 
-		public override bool CloneNewInstances => false;
+		public override bool CloneNewInstances => false; //IMPORTANT THAT IT'S FALSE, SO Clone(Item, Item) WORKS PROPERLY
 
 		public override bool InstancePerEntity => true;
 
-		//None is in by default
+		//None is in by default. If item is applied a prefix outside of reforging (during loading, on drop, etc), it's replaced with the current prefix
 		//Recently added prefix on reforge gets added at the end of the list
-		//The 2nd-from last element is the one to go back to on revert
+		//The 2nd-from-last element is the one to go back to on revert
 		//On revert, move the last element to the start of the list
 		public List<int> reforges = new List<int>()
 		{
@@ -66,7 +66,8 @@ namespace ConsistentReforging
 
 		public override bool NeedsSaving(Item item)
 		{
-			return Config.Instance.SaveReforges && reforges.Count > 2;
+			//Save if there are atleast two prefixes in history
+			return Config.Instance.SaveReforges && reforges.Count > 1;
 		}
 
 		public override TagCompound Save(Item item)
