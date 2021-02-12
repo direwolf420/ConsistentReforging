@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using Terraria;
@@ -50,6 +51,7 @@ namespace ConsistentReforging
 		[DefaultValue(AnchorDefault)]
 		public string UndoButtonAnchorPos;
 
+		[JsonIgnore]
 		public bool Bottom => UndoButtonAnchorPos == AnchorBottom;
 
 		[OnDeserialized]
