@@ -1,12 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.ID;
 using Terraria.UI;
 
 namespace ConsistentReforging.UI.Common
 {
 	/// <summary>
-	/// Same as UIImageButton from vanilla, but has no sound on mouseover, a hover text, and can't be clicked outside of the screens top/left edges
+	/// Same as UIImageButton from vanilla
 	/// </summary>
 	public class UIImageButtonExtended : UIElement
 	{
@@ -22,16 +23,9 @@ namespace ConsistentReforging.UI.Common
 			Recalculate();
 		}
 
-		public override void Click(UIMouseEvent evt)
-		{
-			if (evt.MousePosition.X < 0 || evt.MousePosition.Y < 0) return;
-
-			base.Click(evt);
-		}
-
 		public override void MouseOver(UIMouseEvent evt)
 		{
-			if (evt.MousePosition.X < 0 || evt.MousePosition.Y < 0) return;
+			Main.PlaySound(SoundID.MenuTick);
 
 			base.MouseOver(evt);
 		}
