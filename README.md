@@ -12,4 +12,5 @@ The **Consistent Reforging** mod improves reforging by making it less random wit
 Notes:
 * Undoing costs no money
 * "Undo" button is only visible in the vanilla reforge menu. If other mods (such as "AutoReforge") replace it, it will not exist
+* (In that case, Feature #2 will still work when reforging)
 * The config contains multiple customizations you can do

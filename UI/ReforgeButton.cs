@@ -7,9 +7,6 @@ namespace ConsistentReforging.UI
 {
 	internal class ReforgeButton : UIImageButtonExtended
 	{
-		internal const float AlphaOver = 0.9f;
-		internal const float AlphaOut = 0.6f;
-
 		internal Texture2D buttonBGTexture;
 
 		public ReforgeButton(Texture2D texture) : base(texture)
