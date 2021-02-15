@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -21,21 +20,15 @@ namespace ConsistentReforging.UI
 			button = new ReforgeButton(buttonTexture);
 			button.OnClick += Button_OnClick;
 			button.OnMouseOver += Button_OnMouseOver;
-			button.HAlign = 1f;
 			Append(button);
-
-			PositionUI();
-
-			this.Width.Precent = 0f;
-			this.Height.Precent = 0f;
-			this.Width.Pixels = buttonTexture.Width;
-			this.Height.Pixels = buttonTexture.Height;
 
 			Recalculate();
 		}
 
-		private void PositionUI()
+		public override void Recalculate()
 		{
+			if (button == null) return;
+
 			int x = 50;
 			int y = 270;
 
@@ -55,15 +48,9 @@ namespace ConsistentReforging.UI
 			}
 			//spriteBatch.Draw(texture2D3, new Vector2(num66, num67), null, Microsoft.Xna.Framework.Color.White, 0f, texture2D3.Size() / 2f, reforgeScale, SpriteEffects.None, 0f);
 
-			this.Left.Pixels = ourReforgeX - buttonTexture.Width / 2;
-			this.Top.Pixels = ourReforgeY - buttonTexture.Height / 2;
-		}
-
-		public override void Update(GameTime gameTime)
-		{
-			base.Update(gameTime);
-
-			PositionUI();
+			button.Left.Pixels = ourReforgeX - button.Width.Pixels / 2;
+			button.Top.Pixels = ourReforgeY - button.Height.Pixels / 2;
+			base.Recalculate();
 		}
 
 		private void Button_OnMouseOver(UIMouseEvent evt, UIElement listeningElement)

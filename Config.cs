@@ -64,5 +64,10 @@ namespace ConsistentReforging
 				UndoButtonAnchorPos = AnchorDefault;
 			}
 		}
+
+		public override void OnChanged()
+		{
+			ConsistentReforging.uiState?.Recalculate();
+		}
 	}
 }
