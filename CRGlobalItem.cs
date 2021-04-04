@@ -78,8 +78,6 @@ namespace ConsistentReforging
 		{
 			List<int> vanillaReforges = reforges.Where(p => p < PrefixID.Count).ToList();
 
-			List<string> asd = reforges.Where(p => p >= PrefixID.Count).Select(p => ModPrefix.GetPrefix((byte)p).Name).ToList();
-
 			Dictionary<string, List<string>> modReforges = new Dictionary<string, List<string>>();
 
 			foreach (var p in reforges)
@@ -236,58 +234,87 @@ namespace ConsistentReforging
 
 		public override void NetSend(Item item, BinaryWriter writer)
 		{
-			//RangeMax is < 255, and prefixes are bytes aswell
-			writer.Write((byte)reforges.Count);
-			for (int i = 0; i < reforges.Count; i++)
+			int reforgeCount = reforges.Count;
+			int orphanedCount = orphanedModPrefixes.Count;
+
+			BitsByte flags = new BitsByte();
+			bool hasReforges = flags[0] = reforgeCount > 1;
+			bool hasOrphaned = flags[1] = orphanedCount > 0;
+
+			writer.Write((byte)flags);
+
+			if (hasReforges)
 			{
-				writer.Write((byte)reforges[i]);
+				//RangeMax is < 255, and prefixes are bytes aswell
+				writer.Write((byte)reforgeCount);
+				for (int i = 0; i < reforgeCount; i++)
+				{
+					writer.Write((byte)reforges[i]);
+				}
 			}
 
-			//Send orphaned mod count first
-			writer.Write((int)orphanedModPrefixes.Count);
-
-			foreach (var pair in orphanedModPrefixes)
+			if (hasOrphaned)
 			{
-				//Mod name
-				writer.Write((string)pair.Key);
-				var list = pair.Value;
+				//Send orphaned mod count first
+				writer.Write((int)orphanedCount);
 
-				//By extension, a mod can't have more than 255 prefixes
-				writer.Write((byte)list.Count);
-				for (int i = 0; i < list.Count; i++)
+				foreach (var pair in orphanedModPrefixes)
 				{
-					writer.Write((string)list[i]);
+					//Mod name
+					writer.Write((string)pair.Key);
+					var list = pair.Value;
+
+					//By extension, a mod can't have more than 255 prefixes
+					writer.Write((byte)list.Count);
+					for (int i = 0; i < list.Count; i++)
+					{
+						writer.Write((string)list[i]);
+					}
 				}
 			}
 		}
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
-			byte count = reader.ReadByte();
-			reforges = new List<int>();
-			for (int i = 0; i < count; i++)
+			BitsByte flags = reader.ReadByte();
+			bool hasReforges = flags[0]; //If atleast two prefixes in it
+			bool hasOrphaned = flags[1]; //If atleast one prefix in it
+
+			if (hasReforges)
 			{
-				reforges.Add(reader.ReadByte());
+				byte count = reader.ReadByte();
+				reforges = new List<int>();
+				for (int i = 0; i < count; i++)
+				{
+					reforges.Add(reader.ReadByte());
+				}
+			}
+			else
+			{
+				//Reforges already contains an entry due to field initializer
 			}
 
-			int orphanCount = reader.ReadInt32();
-
-			orphanedModPrefixes = new Dictionary<string, List<string>>();
-
-			for (int i = 0; i < orphanCount; i++)
+			if (hasOrphaned)
 			{
-				string modName = reader.ReadString();
+				int orphanCount = reader.ReadInt32();
 
-				orphanedModPrefixes[modName] = new List<string>();
+				orphanedModPrefixes = new Dictionary<string, List<string>>();
 
-				byte prefixCount = reader.ReadByte();
-
-				for (int j = 0; j < prefixCount; j++)
+				for (int i = 0; i < orphanCount; i++)
 				{
-					string name = reader.ReadString();
+					string modName = reader.ReadString();
 
-					List<string> lists = orphanedModPrefixes[modName];
-					lists.Add(name);
+					orphanedModPrefixes[modName] = new List<string>();
+
+					byte prefixCount = reader.ReadByte();
+
+					for (int j = 0; j < prefixCount; j++)
+					{
+						string name = reader.ReadString();
+
+						List<string> lists = orphanedModPrefixes[modName];
+						lists.Add(name);
+					}
 				}
 			}
 		}
