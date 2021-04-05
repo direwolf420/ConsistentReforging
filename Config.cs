@@ -29,6 +29,11 @@ namespace ConsistentReforging
 		[DefaultValue(false)]
 		public bool ShowReforgeHistoryTooltip;
 
+		[Tooltip("In addition to 'Reforge History Tooltip', shows disabled modded prefixes")]
+		[Label("Orphaned Mod Reforge History Tooltip")]
+		[DefaultValue(false)]
+		public bool ShowOrphanedReforgeHistoryTooltip;
+
 		[Tooltip("If reforge history should be saved on world exit (and loaded on world join)")]
 		[Label("Save Reforge History")]
 		[DefaultValue(false)]

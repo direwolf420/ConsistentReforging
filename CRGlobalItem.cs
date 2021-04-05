@@ -434,6 +434,27 @@ namespace ConsistentReforging
 			{
 				tooltips.Add(new TooltipLine(mod, "PreviousPrefix", "Previous prefix: None"));
 			}
+
+			if (!Config.Instance.ShowOrphanedReforgeHistoryTooltip) return;
+
+			foreach (var pair in orphanedModPrefixes)
+			{
+				string modName = pair.Key;
+
+				List<string> names = pair.Value;
+
+				List<TooltipLine> lines = new List<TooltipLine>();
+
+				if (names.Count <= 0) continue;
+
+				tooltips.Add(new TooltipLine(mod, $"Orphaned:{modName}", modName + ":"));
+
+				for (int i = 0; i < names.Count; i++)
+				{
+					string name = names[i];
+					tooltips.Add(new TooltipLine(mod, $"Orphaned:{modName}_{i}", "  " + name));
+				}
+			}
 		}
 	}
 }
