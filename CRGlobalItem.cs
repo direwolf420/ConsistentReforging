@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -12,7 +13,7 @@ namespace ConsistentReforging
 	{
 		public static bool revertingReforge = false;
 
-		public override bool CloneNewInstances => false; //IMPORTANT THAT IT'S FALSE, SO Clone(Item, Item) WORKS PROPERLY
+		//public override bool CloneNewInstances => false; //IMPORTANT THAT IT'S FALSE, SO Clone(Item, Item) WORKS PROPERLY
 
 		public override bool InstancePerEntity => true;
 
@@ -87,14 +88,14 @@ namespace ConsistentReforging
 					continue;
 				}
 
-				ModPrefix modPrefix = ModPrefix.GetPrefix((byte)p);
+				ModPrefix modPrefix = PrefixLoader.GetPrefix(p);
 
 				if (modPrefix == null)
 				{
 					continue;
 				}
 
-				Mod mod = modPrefix.mod;
+				Mod mod = modPrefix.Mod;
 
 				if (mod == null)
 				{
@@ -193,9 +194,7 @@ namespace ConsistentReforging
 				string modName = modTag.Key;
 				var reforgeNames = modTag.Value as List<string> ?? new List<string>();
 
-				Mod mod = ModLoader.GetMod(modName);
-
-				if (mod == null)
+				if (!ModLoader.TryGetMod(modName, out _))
 				{
 					if (!orphanedModPrefixes.ContainsKey(modName))
 					{
@@ -208,8 +207,11 @@ namespace ConsistentReforging
 
 				foreach (var name in reforgeNames)
 				{
-					ModPrefix modPrefix = mod.GetPrefix(name);
-					if (modPrefix == null)
+					if (ModContent.TryFind(modName, name, out ModPrefix modPrefix))
+					{
+						modReforges.Add(modPrefix.Type);
+					}
+					else
 					{
 						//If loaded prefix does not exist, add it as orphaned
 						if (!orphanedModPrefixes.ContainsKey(modName))
@@ -224,8 +226,6 @@ namespace ConsistentReforging
 						}
 						continue;
 					}
-
-					modReforges.Add(modPrefix.Type);
 				}
 			}
 
@@ -398,9 +398,9 @@ namespace ConsistentReforging
 			item.Center = Main.LocalPlayer.Center;
 			item.favorited = favorited;
 			item.stack = stack;
-			ItemText.NewText(item, item.stack, noStack: true);
+			PopupText.NewText(PopupTextContext.ItemReforge, item, item.stack, noStack: true);
 
-			Main.PlaySound(SoundID.Tink);
+			SoundEngine.PlaySound(SoundID.Tink);
 
 			if (global.reforges.Count > 1)
 			{
@@ -423,16 +423,16 @@ namespace ConsistentReforging
 			{
 				var all = reforges.Select(pre => pre > 0 ? Lang.prefix[pre].Value : "None");
 
-				tooltips.Add(new TooltipLine(mod, "PrefixHistory", string.Join(", ", all)));
+				tooltips.Add(new TooltipLine(Mod, "PrefixHistory", string.Join(", ", all)));
 			}
 
 			if (RevertPrefix > 0)
 			{
-				tooltips.Add(new TooltipLine(mod, "PreviousPrefix", "Previous prefix: " + Lang.prefix[RevertPrefix].Value));
+				tooltips.Add(new TooltipLine(Mod, "PreviousPrefix", "Previous prefix: " + Lang.prefix[RevertPrefix].Value));
 			}
 			else
 			{
-				tooltips.Add(new TooltipLine(mod, "PreviousPrefix", "Previous prefix: None"));
+				tooltips.Add(new TooltipLine(Mod, "PreviousPrefix", "Previous prefix: None"));
 			}
 
 			if (!Config.Instance.ShowOrphanedReforgeHistoryTooltip) return;
@@ -447,12 +447,12 @@ namespace ConsistentReforging
 
 				if (names.Count <= 0) continue;
 
-				tooltips.Add(new TooltipLine(mod, $"Orphaned:{modName}", modName + ":"));
+				tooltips.Add(new TooltipLine(Mod, $"Orphaned:{modName}", modName + ":"));
 
 				for (int i = 0; i < names.Count; i++)
 				{
 					string name = names[i];
-					tooltips.Add(new TooltipLine(mod, $"Orphaned:{modName}_{i}", "  " + name));
+					tooltips.Add(new TooltipLine(Mod, $"Orphaned:{modName}_{i}", "  " + name));
 				}
 			}
 		}

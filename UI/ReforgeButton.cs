@@ -1,15 +1,16 @@
 ﻿using ConsistentReforging.UI.Common;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria.ModLoader;
 
 namespace ConsistentReforging.UI
 {
 	internal class ReforgeButton : UIImageButtonExtended
 	{
-		internal Texture2D buttonBGTexture;
+		internal Asset<Texture2D> buttonBGTexture;
 
-		public ReforgeButton(Texture2D texture) : base(texture)
+		public ReforgeButton(Asset<Texture2D> asset) : base(asset)
 		{
 
 		}
@@ -18,7 +19,8 @@ namespace ConsistentReforging.UI
 		{
 			if (buttonBGTexture == null)
 			{
-				buttonBGTexture = ModContent.GetTexture("ConsistentReforging/UI/ButtonBG");
+				//No immediate required, since UI dims don't depend on it
+				buttonBGTexture = ModContent.Request<Texture2D>("ConsistentReforging/UI/ButtonBG");
 			}
 			SetAlpha(1f, 1f);
 		}

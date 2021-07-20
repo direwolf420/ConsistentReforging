@@ -72,7 +72,7 @@ namespace ConsistentReforging
 
 		public override void OnChanged()
 		{
-			ConsistentReforging.uiState?.Recalculate();
+			CRUISystem.uiState?.Recalculate();
 		}
 	}
 }

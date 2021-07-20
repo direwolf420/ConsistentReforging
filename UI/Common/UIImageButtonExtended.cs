@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.UI;
 
@@ -11,50 +13,50 @@ namespace ConsistentReforging.UI.Common
 	/// </summary>
 	public class UIImageButtonExtended : UIElement
 	{
-		protected Texture2D texture;
+		protected Asset<Texture2D> asset;
 		private float alphaOver = 1f;
 		private float alphaOut = 0.4f;
 
 		private string hoverText = "";
 
-		public UIImageButtonExtended(Texture2D texture)
+		public UIImageButtonExtended(Asset<Texture2D> asset)
 		{
-			SetImage(texture);
+			SetImage(asset);
 			Recalculate();
 		}
 
 		public override void MouseOver(UIMouseEvent evt)
 		{
-			Main.PlaySound(SoundID.MenuTick);
+			SoundEngine.PlaySound(SoundID.MenuTick);
 
 			base.MouseOver(evt);
 		}
 
-		protected void DrawInternal(SpriteBatch spriteBatch, Texture2D texture, Vector2 off = default, Color color = default)
+		protected void DrawInternal(SpriteBatch spriteBatch, Asset<Texture2D> asset, Vector2 off = default, Color color = default)
 		{
 			if (color == default) color = Color.White;
 
-			spriteBatch.Draw(position: GetDimensions().Position() + off, texture: texture, color: color * (IsMouseHovering ? alphaOver : alphaOut));
+			spriteBatch.Draw(position: GetDimensions().Position() + off, texture: asset.Value, color: color * (IsMouseHovering ? alphaOver : alphaOut));
 		}
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
-			DrawInternal(spriteBatch, texture);
+			DrawInternal(spriteBatch, asset);
 
 			if (IsMouseHovering)
 			{
 				Main.LocalPlayer.mouseInterface = true;
-				Main.LocalPlayer.showItemIcon = false;
+				Main.LocalPlayer.cursorItemIconEnabled = false;
 				Main.ItemIconCacheUpdate(0);
 				Main.hoverItemName = hoverText;
 			}
 		}
 
-		public void SetImage(Texture2D texture)
+		public void SetImage(Asset<Texture2D> asset)
 		{
-			this.texture = texture;
-			Width.Pixels = this.texture.Width;
-			Height.Pixels = this.texture.Height;
+			this.asset = asset;
+			Width.Pixels = this.asset.Width();
+			Height.Pixels = this.asset.Height();
 		}
 
 		public void SetHoverText(string hoverText)

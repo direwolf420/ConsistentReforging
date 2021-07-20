@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ModLoader;
 using Terraria.UI;
 
@@ -7,17 +9,18 @@ namespace ConsistentReforging.UI
 {
 	internal class ReforgeUIState : UIState
 	{
-		internal Texture2D buttonTexture;
+		internal Asset<Texture2D> buttonAsset;
 		private ReforgeButton button;
 
 		public override void OnInitialize()
 		{
-			if (buttonTexture == null)
+			if (buttonAsset == null)
 			{
-				buttonTexture = ModContent.GetTexture("ConsistentReforging/UI/Button");
+				//UI textures should load immediate if dimensions depend on it
+				buttonAsset = ModContent.Request<Texture2D>("ConsistentReforging/UI/Button", AssetRequestMode.ImmediateLoad);
 			}
 
-			button = new ReforgeButton(buttonTexture);
+			button = new ReforgeButton(buttonAsset);
 			button.OnClick += Button_OnClick;
 			button.OnMouseOver += Button_OnMouseOver;
 			Append(button);
@@ -38,15 +41,16 @@ namespace ConsistentReforging.UI
 			int ourReforgeX = reforgeX;
 			int ourReforgeY = reforgeY;
 
+			Asset<Texture2D> reforgeIcon = TextureAssets.Reforge[0];
 			if (Config.Instance.Bottom)
 			{
-				ourReforgeY += Main.reforgeTexture[0]?.Height ?? 28;
+				ourReforgeY += reforgeIcon?.Height() ?? 28;
 			}
 			else
 			{
-				ourReforgeX += Main.reforgeTexture[0]?.Width ?? 28;
+				ourReforgeX += reforgeIcon?.Width() ?? 28;
 			}
-			//spriteBatch.Draw(texture2D3, new Vector2(num66, num67), null, Microsoft.Xna.Framework.Color.White, 0f, texture2D3.Size() / 2f, reforgeScale, SpriteEffects.None, 0f);
+			//spriteBatch.Draw(value5, new Vector2(num64, num65), null, Microsoft.Xna.Framework.Color.White, 0f, value5.Size() / 2f, reforgeScale, SpriteEffects.None, 0f);
 
 			button.Left.Pixels = ourReforgeX - button.Width.Pixels / 2;
 			button.Top.Pixels = ourReforgeY - button.Height.Pixels / 2;
@@ -67,7 +71,7 @@ namespace ConsistentReforging.UI
 
 		private void Button_OnClick(UIMouseEvent evt, UIElement listeningElement)
 		{
-			if (!ConsistentReforging.UIFunctional())
+			if (!CRUISystem.UIFunctional())
 			{
 				return;
 			}
