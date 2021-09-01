@@ -28,7 +28,7 @@ namespace ConsistentReforging
 		public static bool UIFunctional()
 		{
 			Item item = Main.reforgeItem;
-			return Main.InReforgeMenu && item != null && !item.IsAir && item.GetGlobalItem<CRGlobalItem>().reforges.Count > 1;
+			return Main.InReforgeMenu && item != null && !item.IsAir && item.TryGetGlobalItem<CRGlobalItem>(out var global) && global.reforges.Count > 1;
 		}
 
 		public override void OnModLoad()

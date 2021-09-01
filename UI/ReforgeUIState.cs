@@ -64,7 +64,12 @@ namespace ConsistentReforging.UI
 
 		public void SetHoverTextItem()
 		{
-			int pre = Main.reforgeItem.GetGlobalItem<CRGlobalItem>().RevertPrefix;
+			if (!Main.reforgeItem.TryGetGlobalItem<CRGlobalItem>(out var global))
+			{
+				return;
+			}
+
+			int pre = global.RevertPrefix;
 			string name = pre > 0 ? Lang.prefix[pre].Value : "None";
 			button.SetHoverText($"Undo last reforge (-> {name})");
 		}

@@ -370,7 +370,11 @@ namespace ConsistentReforging
 		{
 			revertingReforge = true;
 
-			CRGlobalItem global = item.GetGlobalItem<CRGlobalItem>();
+			if (!item.TryGetGlobalItem<CRGlobalItem>(out var global))
+			{
+				return;
+			}
+
 			int revertPrefix = global.RevertPrefix;
 
 			int oldPrefix = global.reforges.Last();

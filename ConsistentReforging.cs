@@ -19,7 +19,10 @@ namespace ConsistentReforging
 
 			if (self.IsAir) return ret;
 
-			self.GetGlobalItem<CRGlobalItem>().AddPrefixToItemIfItHasNoHistory(self);
+			if (self.TryGetGlobalItem<CRGlobalItem>(out var result))
+			{
+				result.AddPrefixToItemIfItHasNoHistory(self);
+			}
 
 			return ret;
 		}
