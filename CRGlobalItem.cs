@@ -69,14 +69,14 @@ namespace ConsistentReforging
 			}
 		}
 
-		public override bool NeedsSaving(Item item)
+		public override void SaveData(Item item, TagCompound tag)
 		{
 			//Save if there are atleast two prefixes in history
-			return Config.Instance.SaveReforges && reforges.Count > 1;
-		}
+			if (!(Config.Instance.SaveReforges && reforges.Count > 1))
+			{
+				return;
+			}
 
-		public override TagCompound Save(Item item)
-		{
 			List<int> vanillaReforges = reforges.Where(p => p < PrefixID.Count).ToList();
 
 			Dictionary<string, List<string>> modReforges = new Dictionary<string, List<string>>();
@@ -120,8 +120,6 @@ namespace ConsistentReforging
 
 			//Dictionary to TagCompound
 
-			TagCompound tag = new TagCompound();
-
 			TagCompound moddedReforges = new TagCompound();
 
 			foreach (var pair in modReforges)
@@ -145,11 +143,9 @@ namespace ConsistentReforging
 			//{
 			//	{"reforges", reforges }
 			//};
-
-			return tag;
 		}
 
-		public override void Load(Item item, TagCompound tag)
+		public override void LoadData(Item item, TagCompound tag)
 		{
 			if (!Config.Instance.SaveReforges) return;
 
