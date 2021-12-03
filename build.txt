@@ -1,9 +1,10 @@
 displayName = Consistent Reforging
 author = direwolf420
-version = 0.1.1.2
+version = 0.1.2
 hideCode = false
 hideResources = false
 includeSource = false
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, *.md
 includePDB = true
 homepage = https://forums.terraria.org/index.php?threads/consistent-reforging.103087/
+sortAfter = ReforgeArmor

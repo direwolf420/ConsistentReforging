@@ -326,6 +326,9 @@ namespace ConsistentReforging
 
 		public override void PostReforge(Item item)
 		{
+			//sortAfter = ReforgeArmor added in build.txt since it's code should run before ours (otherwise item has no prefix yet)
+			//Its code: https://bitbucket.org/AJMJ2012/reforgearmor/src/master/ReforgeArmor.cs
+
 			AddRecentReforge(item);
 		}
 
