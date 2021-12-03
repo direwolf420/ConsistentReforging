@@ -8,3 +8,4 @@ Notes:
 * "Undo" button is only visible in the vanilla reforge menu. If other mods (such as "AutoReforge") replace it, it will not exist
 * (In that case, Feature #2 will still work when reforging)
 * The config contains multiple customizations you can do
+* Compatible with the Reforge Armor mod
