@@ -416,7 +416,7 @@ namespace ConsistentReforging
 
 			if (!Config.Instance.ShowReforgeHistoryTooltip) return;
 
-			bool inVanity = tooltips.Any(t => t.mod == "Terraria" && t.Name == "Social");
+			bool inVanity = tooltips.Any(t => t.Mod == "Terraria" && t.Name == "Social");
 			if (inVanity) return;
 
 			if (reforges.Count > 0)
