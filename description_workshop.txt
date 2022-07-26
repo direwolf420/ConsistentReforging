@@ -1,0 +1,13 @@
+This mod improves reforging by making it [b]less random[/b] without being too cheaty
+
+1. Adds an [b]"Undo"[/b] button so that you can go back to the prefix you accidently skipped while spamming reforge
+2. Prevents [b]duplicate rolls[/b] of prefixes if they have been rolled before (by default the last 8, configurable)
+
+Notes:
+* Undoing costs no money
+* "Undo" button is only visible in the vanilla reforge menu. If other mods (such as "AutoReforge") replace it, it will not exist
+* (In that case, Feature #2 will still work when reforging)
+* The config contains multiple customizations you can do
+[hr][/hr]
+[b]MOD INCOMPATIBILITIES:[/b]
+* Calamity Mod: prevents all the features from working
