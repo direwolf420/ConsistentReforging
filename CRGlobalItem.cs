@@ -384,7 +384,8 @@ namespace ConsistentReforging
 			//TODO: method only used here, probably a poor implementation - noted by CB
 			r = r.CloneWithModdedDataFrom(item);
 
-			if (revertPrefix > 0)
+			bool canGetPrefix = ItemLoader.AllowPrefix(r, revertPrefix); //Kind of a hack, added so that mods that prevent revertPrefix from being applied doesn't hang the game
+			if (revertPrefix > 0 && canGetPrefix)
 			{
 				r.Prefix(revertPrefix);
 			}
