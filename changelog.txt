@@ -1,1 +1,1 @@
-Added a workaround to fix an incompatibility with the Quality Of Life mod
+Remove incompatibility warning with Calamity Mod as it's fixed on their end as of oct 7
