@@ -7,7 +7,7 @@ using Terraria.UI;
 
 namespace ConsistentReforging
 {
-	//Mod could be clientside if not for the send/receive code for syncing the reforge history
+	[Autoload(Side = ModSide.Client)]
 	public class CRUISystem : ModSystem
 	{
 		internal static UserInterface reforgeInterface;
@@ -28,18 +28,15 @@ namespace ConsistentReforging
 		public static bool UIFunctional()
 		{
 			Item item = Main.reforgeItem;
-			return Main.InReforgeMenu && item != null && !item.IsAir && item.TryGetGlobalItem<CRGlobalItem>(out var global) && global.reforges.Count > 1;
+			return Main.InReforgeMenu && item != null && !item.IsAir && item.TryGetGlobalItem<CRGlobalItem>(out var global) && global.WorthHandling;
 		}
 
 		public override void OnModLoad()
 		{
-			if (!Main.dedServ)
-			{
-				reforgeInterface = new UserInterface();
+			reforgeInterface = new UserInterface();
 
-				uiState = new ReforgeUIState();
-				uiState.Activate();
-			}
+			uiState = new ReforgeUIState();
+			uiState.Activate();
 		}
 
 		public override void Unload()

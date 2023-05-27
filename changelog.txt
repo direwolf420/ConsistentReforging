@@ -1,1 +1,2 @@
-Remove incompatibility warning with Calamity Mod as it's fixed on their end as of oct 7
+* Updated to 1.4.4 tml
+* Now localizable. Read the mod description for more info

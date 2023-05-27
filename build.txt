@@ -1,6 +1,6 @@
 displayName = Consistent Reforging
 author = direwolf420
-version = 0.2.0.7
+version = 0.3
 hideCode = false
 hideResources = false
 includeSource = false

@@ -47,7 +47,12 @@ namespace ConsistentReforging
 			}
 		}
 
-		public int PrefixIndex => reforges.Count > 1 ? reforges.Count - 2 : InvalidIndex;
+		/// <summary>
+		/// If it contains atleast two prefixes (one of them non-zero)
+		/// </summary>
+		public bool WorthHandling => reforges.Count > 1;
+
+		public int PrefixIndex => WorthHandling ? reforges.Count - 2 : InvalidIndex;
 
 		private int rollCount = 0;
 
@@ -72,7 +77,7 @@ namespace ConsistentReforging
 		public override void SaveData(Item item, TagCompound tag)
 		{
 			//Save if there are atleast two prefixes in history
-			if (!(Config.Instance.SaveReforges && reforges.Count > 1))
+			if (!(Config.Instance.SaveReforges && WorthHandling))
 			{
 				return;
 			}
@@ -329,7 +334,6 @@ namespace ConsistentReforging
 		{
 			if (revertingReforge && pre == RevertPrefix)
 			{
-				revertingReforge = false;
 				return true;
 			}
 
@@ -364,41 +368,37 @@ namespace ConsistentReforging
 
 		public static void RevertReforge(ref Item item)
 		{
-			revertingReforge = true;
-
 			if (!item.TryGetGlobalItem<CRGlobalItem>(out var global))
 			{
 				return;
 			}
 
 			int revertPrefix = global.RevertPrefix;
-
 			int oldPrefix = global.reforges.Last();
 
-			//Below code mostly copied from how tml handles reforging
-
-			bool favorited = item.favorited;
-			int stack = item.stack;
-			Item r = new Item();
-			r.netDefaults(item.netID);
-			//TODO: method only used here, probably a poor implementation - noted by CB
-			r = r.CloneWithModdedDataFrom(item);
-
-			bool canGetPrefix = ItemLoader.AllowPrefix(r, revertPrefix); //Kind of a hack, added so that mods that prevent revertPrefix from being applied doesn't hang the game
-			if (revertPrefix > 0 && canGetPrefix)
+			try
 			{
-				r.Prefix(revertPrefix);
-			}
+				revertingReforge = true;
 
-			item = r.Clone();
+				//Below code mostly copied from how tml handles reforging
+				item.ResetPrefix(); //ResetPrefix sets prefix to 0
+
+				bool canGetPrefix = ItemLoader.AllowPrefix(item, revertPrefix); //Kind of a hack, added so that mods that prevent revertPrefix from being applied doesn't hang the game
+				if (revertPrefix > 0 && canGetPrefix)
+				{
+					item.Prefix(revertPrefix);
+				}
+			}
+			finally
+			{
+				revertingReforge = false;
+			}
 
 			//Get new global from item
 			global = item.GetGlobalItem<CRGlobalItem>();
 
 			//Required for the ItemText to display properly
 			item.Center = Main.LocalPlayer.Center;
-			item.favorited = favorited;
-			item.stack = stack;
 			PopupText.NewText(PopupTextContext.ItemReforge, item, item.stack, noStack: true);
 
 			SoundEngine.PlaySound(SoundID.Tink);
@@ -422,19 +422,12 @@ namespace ConsistentReforging
 
 			if (reforges.Count > 0)
 			{
-				var all = reforges.Select(pre => pre > 0 ? Lang.prefix[pre].Value : "None");
+				var all = reforges.Select(pre => pre > 0 ? Lang.prefix[pre].Value : ConsistentReforging.NoPrefixText.ToString());
 
 				tooltips.Add(new TooltipLine(Mod, "PrefixHistory", string.Join(", ", all)));
 			}
 
-			if (RevertPrefix > 0)
-			{
-				tooltips.Add(new TooltipLine(Mod, "PreviousPrefix", "Previous prefix: " + Lang.prefix[RevertPrefix].Value));
-			}
-			else
-			{
-				tooltips.Add(new TooltipLine(Mod, "PreviousPrefix", "Previous prefix: None"));
-			}
+			tooltips.Add(new TooltipLine(Mod, "PreviousPrefix", ConsistentReforging.PreviousPrefixText.Format(RevertPrefix > 0 ? Lang.prefix[RevertPrefix].Value : ConsistentReforging.NoPrefixText.ToString())));
 
 			if (!Config.Instance.ShowOrphanedReforgeHistoryTooltip) return;
 

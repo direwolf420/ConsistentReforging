@@ -21,7 +21,7 @@ namespace ConsistentReforging.UI
 			}
 
 			button = new ReforgeButton(buttonAsset);
-			button.OnClick += Button_OnClick;
+			button.OnLeftClick += Button_OnLeftClick;
 			button.OnMouseOver += Button_OnMouseOver;
 			Append(button);
 
@@ -70,11 +70,11 @@ namespace ConsistentReforging.UI
 			}
 
 			int pre = global.RevertPrefix;
-			string name = pre > 0 ? Lang.prefix[pre].Value : "None";
-			button.SetHoverText($"Undo last reforge (-> {name})");
+			string name = pre > 0 ? Lang.prefix[pre].Value : ConsistentReforging.NoPrefixText.ToString();
+			button.SetHoverText(ConsistentReforging.UndoLastReforgeText.Format(name));
 		}
 
-		private void Button_OnClick(UIMouseEvent evt, UIElement listeningElement)
+		private void Button_OnLeftClick(UIMouseEvent evt, UIElement listeningElement)
 		{
 			if (!CRUISystem.UIFunctional())
 			{

@@ -14,3 +14,11 @@ Notes:
 * "Undo" button is only visible in the vanilla reforge menu. If other mods (such as "AutoReforge") replace it, it will not exist
 * (In that case, Feature #2 will still work when reforging)
 * The config contains multiple customizations you can do
+
+## Localization
+If you wish to contribute translations, visit the [tML wiki page](https://github.com/tModLoader/tModLoader/wiki/Localization) on that.
+This mod uses `.hjson` files in the `Localization` folder.
+Translate things that are in english and commented out (either via `//` or `/* */`, remove the comment markers after translating)
+
+List of localization contributors:
+* None!

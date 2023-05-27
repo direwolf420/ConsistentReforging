@@ -3,8 +3,13 @@ This mod improves reforging by making it [b]less random[/b] without being too ch
 1. Adds an [b]"Undo"[/b] button so that you can go back to the prefix you accidently skipped while spamming reforge
 2. Prevents [b]duplicate rolls[/b] of prefixes if they have been rolled before (by default the last 8, configurable)
 
-Notes:
+[b]Notes:[/b]
 * Undoing costs no money
 * "Undo" button is only visible in the vanilla reforge menu. If other mods (such as "AutoReforge") replace it, it will not exist
 * (In that case, Feature #2 will still work when reforging)
 * The config contains multiple customizations you can do
+[hr][/hr]
+[b]Localization:[/b]
+If you want to add support for different languages, you are welcome to contribute localizations here: [b][url=https://github.com/direwolf420/ConsistentReforging]GitHub[/url][/b]
+List of localization contributors:
+* None!
