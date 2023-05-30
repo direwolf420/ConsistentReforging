@@ -11,20 +11,23 @@ namespace ConsistentReforging
 		public static LocalizedText NoPrefixText { get; private set; }
 		public static LocalizedText PreviousPrefixText { get; private set; }
 
+		public static bool CurrentlyReforging { get; private set; }
+
 		public override void Load()
 		{
-			On_Item.Prefix += HandlePrefixToItemIfItHasNoHistory;
+			On_Item.Prefix += Prefix;
 
-			//TODO translations
 			string category = $"Common.";
 			UndoLastReforgeText ??= Language.GetOrRegister(this.GetLocalizationKey($"{category}UndoLastReforge"));
 			NoPrefixText ??= Language.GetOrRegister(this.GetLocalizationKey($"{category}NoPrefix"));
 			PreviousPrefixText ??= Language.GetOrRegister(this.GetLocalizationKey($"{category}PreviousPrefix"));
 		}
 
-		private static bool HandlePrefixToItemIfItHasNoHistory(On_Item.orig_Prefix orig, Item self, int pre)
+		private static bool Prefix(On_Item.orig_Prefix orig, Item self, int pre)
 		{
+			CurrentlyReforging = pre == -2; //Flag the current reforge as being processed in the goblin tinkerer reforge menu
 			bool ret = orig(self, pre);
+			CurrentlyReforging = false;
 
 			if (pre == -2) return ret; //Reforging, as this code should only run for non-reforge contexts
 

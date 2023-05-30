@@ -337,7 +337,7 @@ namespace ConsistentReforging
 				return true;
 			}
 
-			if (Config.Instance.PreventDuplicatesFromHistory && rollCount < Config.RangeMax && reforges.Contains(pre))
+			if (ConsistentReforging.CurrentlyReforging && Config.Instance.PreventDuplicatesFromHistory && rollCount < Config.RangeMax && reforges.Contains(pre))
 			{
 				//Softlock protection
 				rollCount++;

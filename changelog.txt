@@ -1,2 +1,1 @@
-* Updated to 1.4.4 tml
-* Now localizable. Read the mod description for more info
+* Fixed a bug where items lose their reforge upon entering the world
