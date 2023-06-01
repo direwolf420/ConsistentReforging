@@ -48,6 +48,7 @@ namespace ConsistentReforging
 			Right = 1
 		}
 
+		[DrawTicks]
 		[DefaultValue(UndoButtonAnchorPosType.Right)]
 		public UndoButtonAnchorPosType UndoButtonAnchor;
 
