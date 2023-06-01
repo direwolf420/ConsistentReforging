@@ -29,10 +29,16 @@ Mods: {
 					Tooltip: If reforging should not give prefixes already in the reforge history
 				}
 
-				UndoButtonAnchorPos: {
+				UndoButtonAnchor: {
 					Label: "'Undo Button' Position"
 					Tooltip: Choose between positioning the undo button below or right of the reforge button
 				}
+			}
+
+			UndoButtonAnchorPosType: {
+				Tooltip: ""
+				Bottom.Label: Bottom
+				Right.Label: Right
 			}
 		}
 

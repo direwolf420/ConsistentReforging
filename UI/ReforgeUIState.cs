@@ -42,7 +42,7 @@ namespace ConsistentReforging.UI
 			int ourReforgeY = reforgeY;
 
 			Asset<Texture2D> reforgeIcon = TextureAssets.Reforge[0];
-			if (Config.Instance.Bottom)
+			if (Config.Instance.UndoButtonAnchor == Config.UndoButtonAnchorPosType.Bottom)
 			{
 				ourReforgeY += reforgeIcon?.Height() ?? 28;
 			}

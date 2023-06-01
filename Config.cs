@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using Terraria;
@@ -33,28 +35,52 @@ namespace ConsistentReforging
 		[DefaultValue(true)]
 		public bool PreventDuplicatesFromHistory;
 
-		//TODO figure out localization for this
+		//Old data and names for reference
+		[JsonExtensionData]
+		private IDictionary<string, JToken> _additionalData = new Dictionary<string, JToken>();
+
 		public const string AnchorBottom = "Bottom";
 		public const string AnchorRight = "Right";
-		public const string AnchorDefault = AnchorRight;
-		public static readonly string[] AnchorOptions = new string[] { AnchorBottom, AnchorRight };
 
-		[DrawTicks]
-		[OptionStrings(new string[] { AnchorBottom, AnchorRight })]
-		[DefaultValue(AnchorDefault)]
-		public string UndoButtonAnchorPos;
+		public enum UndoButtonAnchorPosType : byte
+		{
+			Bottom = 0,
+			Right = 1
+		}
 
-		[JsonIgnore]
-		public bool Bottom => UndoButtonAnchorPos == AnchorBottom;
+		[DefaultValue(UndoButtonAnchorPosType.Right)]
+		public UndoButtonAnchorPosType UndoButtonAnchor;
 
 		[OnDeserialized]
 		internal void OnDeserializedMethod(StreamingContext context)
 		{
 			ReforgeHistoryLength = Utils.Clamp(ReforgeHistoryLength, RangeMin, RangeMax);
 
-			if (Array.IndexOf(AnchorOptions, UndoButtonAnchorPos) <= -1)
+			//port "UndoButtonAnchorPos": "Bottom" from string to enum, which requires (!) a member rename aswell
+			JToken token;
+			if (_additionalData.TryGetValue("UndoButtonAnchorPos", out token))
 			{
-				UndoButtonAnchorPos = AnchorDefault;
+				var undoButtonAnchorPos = token.ToObject<string>();
+				if (undoButtonAnchorPos == AnchorBottom)
+				{
+					UndoButtonAnchor = UndoButtonAnchorPosType.Bottom;
+				}
+				else
+				{
+					UndoButtonAnchor = UndoButtonAnchorPosType.Right;
+				}
+			}
+			_additionalData.Clear(); //Clear this or it'll crash.
+
+			//Correct invalid values to default fallback
+			EnumFallback(ref UndoButtonAnchor, UndoButtonAnchorPosType.Right);
+		}
+
+		private static void EnumFallback<T>(ref T value, T defaultValue) where T : Enum
+		{
+			if (!Enum.IsDefined(typeof(T), value))
+			{
+				value = defaultValue;
 			}
 		}
 
