@@ -2,50 +2,50 @@ Mods: {
 	ConsistentReforging: {
 		Configs: {
 			Config: {
-				// DisplayName: Config
+				DisplayName: Настройки
 
 				ReforgeHistoryLength: {
-					// Label: Reforge History Length
-					// Tooltip: Amount of prefixes that should be stored per item
+					Label: Длина истории перековок
+					Tooltip: Количество сохраняемых префиксов на каждый предмет
 				}
 
 				ShowReforgeHistoryTooltip: {
-					// Label: Reforge History Tooltip
-					// Tooltip: If reforge history should be displayed on the item tooltip (only in reforge UI)
+					Label: Истории перековок в описаниях
+					Tooltip: Показывать историю перековок в описаниях предметов (только в окне перековки)
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					// Label: Orphaned Mod Reforge History Tooltip
-					// Tooltip: In addition to 'Reforge History Tooltip', shows disabled modded prefixes
+					Label: Поддержка отключённых модификаций
+					Tooltip: В дополнение к истории перековок, также показывать префиксы, принадлежащие отключённым модификациям
 				}
 
 				SaveReforges: {
-					// Label: Save Reforge History
-					// Tooltip: If reforge history should be saved on world exit (and loaded on world join)
+					Label: Сохранять историю перековок
+					Tooltip: История перековок будет сохраняться при выходе из игры (и загружаться при входе)
 				}
 
 				PreventDuplicatesFromHistory: {
-					// Label: Prevent Duplicate Prefixes
-					// Tooltip: If reforging should not give prefixes already in the reforge history
+					Label: Запрещать дублирование префиксов
+					Tooltip: Перековка не будет выдавать префиксы, которые уже присутствуют в истории перековок
 				}
 
 				UndoButtonAnchor: {
-					// Label: "'Undo Button' Position"
-					// Tooltip: Choose between positioning the undo button below or right of the reforge button
+					Label: "Расположение кнопки 'Откат'"
+					Tooltip: Выбор расположения кнопки отката относительно кнопки перековки: внизу или справа
 				}
 			}
 
 			UndoButtonAnchorPosType: {
-				// Tooltip: ""
-				// Bottom.Label: Bottom
-				// Right.Label: Right
+				Tooltip: ""
+				Bottom.Label: Внизу
+				Right.Label: Справа
 			}
 		}
 
 		Common: {
-			// UndoLastReforge: Undo last reforge (-> {0})
-			// NoPrefix: None
-			// PreviousPrefix: Previous prefix: {0}
+			UndoLastReforge: Откатить последнюю перековку (-> {0})
+			NoPrefix: Без префикса
+			PreviousPrefix: Предыдущий префикс: {0}
 		}
 	}
 }
