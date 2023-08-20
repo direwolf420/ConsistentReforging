@@ -11,4 +11,4 @@ Notes:
 
 Localization: If you want to add support for different languages, you are welcome to contribute localizations here: https://github.com/direwolf420/ConsistentReforging
 List of localization contributors:
-* None!
+* Russian: GodHybrid

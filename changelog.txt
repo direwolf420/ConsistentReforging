@@ -1,1 +1,1 @@
-* Finished localization support
+* Added russian localization, thanks GodHybrid!
