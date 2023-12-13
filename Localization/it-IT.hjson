@@ -2,50 +2,50 @@ Mods: {
 	ConsistentReforging: {
 		Configs: {
 			Config: {
-				// DisplayName: Configurazione
+				DisplayName: Configurazione
 
 				ReforgeHistoryLength: {
-					// Label: Lunghezza cronologia riforgiatura
-					// Tooltip: Quantità di prefissi da memorizzare per oggetto
+					Label: Lunghezza cronologia riforgiatura
+					Tooltip: Quantità di prefissi da memorizzare per oggetto
 				}
 
 				ShowReforgeHistoryTooltip: {
-					// Label: Suggerimento cronologia riforgiatura
-					// Tooltip: Mostra se la cronologia della riforgiatura dovrebbe essere visualizzata nei suggerimenti oggetti (solo nella UI riforgiatura)
+					Label: Suggerimento cronologia riforgiatura
+					Tooltip: Mostra se la cronologia della riforgiatura dovrebbe essere visualizzata nei suggerimenti oggetti (solo nella UI riforgiatura)
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					// Label: Suggerimento cronologia riforgiatura delle mod disabilitate
-					// Tooltip: In aggiunta a 'Suggerimento cronologia riforgiatura', mostra prefissi delle mod disabilitate
+					Label: Suggerimento cronologia riforgiatura delle mod disabilitate
+					Tooltip: In aggiunta a 'Suggerimento cronologia riforgiatura', mostra prefissi delle mod disabilitate
 				}
 
 				SaveReforges: {
-					// Label: Salva cronologia riforgiatura
-					// Tooltip: Se la cronologia della riforgiatura dovvrebbe essere salvata all'uscita del mondo (e caricata all'entrata del mondo)
+					Label: Salva cronologia riforgiatura
+					Tooltip: Se la cronologia della riforgiatura dovvrebbe essere salvata all'uscita del mondo (e caricata all'entrata del mondo)
 				}
 
 				PreventDuplicatesFromHistory: {
-					// Label: Prevenzione prefissi duplicati
-					// Tooltip: Se la riforgiatura non dovrebbe dare prefissi già presenti nella cronologia riforgiatura
+					Label: Prevenzione prefissi duplicati
+					Tooltip: Se la riforgiatura non dovrebbe dare prefissi già presenti nella cronologia riforgiatura
 				}
 
 				UndoButtonAnchor: {
-					// Label: "Posizione 'Tasto annulla'"
-					// Tooltip: Scegli se posizionare il tasto annulla sotto oppure a destra del tasto riforgiatura
+					Label: "Posizione 'Tasto annulla'"
+					Tooltip: Scegli se posizionare il tasto annulla sotto oppure a destra del tasto riforgiatura
 				}
 			}
 
 			UndoButtonAnchorPosType: {
-				// Tooltip: ""
-				// Bottom.Label: Sotto
-				// Right.Label: Destra
+				Tooltip: ""
+				Bottom.Label: Sotto
+				Right.Label: Destra
 			}
 		}
 
 		Common: {
-			// UndoLastReforge: Annulla ultima riforgiatura (-> {0})
-			// NoPrefix: Nessuno
-			// PreviousPrefix: Prefisso precedente: {0}
+			UndoLastReforge: Annulla ultima riforgiatura (-> {0})
+			NoPrefix: Nessuno
+			PreviousPrefix: Prefisso precedente: {0}
 		}
 	}
 }
