@@ -10,13 +10,13 @@ Mods: {
 				}
 
 				ShowReforgeHistoryTooltip: {
-					Label: Dica de Histórico de Sufixos
+					Label: Histórico de Sufixos
 					Tooltip: Se o histórico de sufixos deve aparecer nas dicas do item (apenas na interface de forjar)
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					Label: Dica de Histórico de Sufixos de Mods Desabilitados
-					Tooltip: Em adição à 'Dica de Histórico de Sufixos', mostra os sufixos, ainda armazenados, de mods desabilitados
+					Label: Histórico de Sufixos de Mods Desabilitados
+					Tooltip: Em adição à 'Histórico de Sufixos', mostra os sufixos, ainda armazenados, de mods desabilitados
 				}
 
 				SaveReforges: {
@@ -26,7 +26,7 @@ Mods: {
 
 				PreventDuplicatesFromHistory: {
 					Label: Evitar Sufixos Duplicados
-					Tooltip: Se 'forjar novamente' não deve gerar nenhum sufixo já armazenado no histórico de sufixos
+					Tooltip: Se 'forjar novamente' não deve gerar nenhum sufixo que já encontra-se no histórico de sufixos
 				}
 
 				UndoButtonAnchor: {
