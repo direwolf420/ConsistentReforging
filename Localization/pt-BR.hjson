@@ -5,33 +5,33 @@ Mods: {
 				DisplayName: Configurações
 
 				ReforgeHistoryLength: {
-					Label: Tamanho do Histórico de Reforja
+					Label: Tamanho do Histórico de Sufixos
 					Tooltip: Quantidade de sufixos que devem ser armazenados por item
 				}
 
 				ShowReforgeHistoryTooltip: {
-					Label: Dica de Histórico de Reforja
-					Tooltip: Se o histórico deve aparecer nas dicas do item (apenas na interface de reforja)
+					Label: Dica de Histórico de Sufixos
+					Tooltip: Se o histórico de sufixos deve aparecer nas dicas do item (apenas na interface de forjar)
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					Label: Dica de Histórico de Reforja de Mods Desabilitados
-					Tooltip: Em adição à 'Dica de Histórico de Reforja', mostra os sufixo, ainda armazenados, de mods desabilitados
+					Label: Dica de Histórico de Sufixos de Mods Desabilitados
+					Tooltip: Em adição à 'Dica de Histórico de Sufixos', mostra os sufixos, ainda armazenados, de mods desabilitados
 				}
 
 				SaveReforges: {
-					Label: Salvar Histórico de Reforja
-					Tooltip: Se o histórico de reforja deve ser salvo ao sair do mundo (e carregado ao entrar no mundo)
+					Label: Salvar Histórico de Sufixos
+					Tooltip: Se o histórico de sufixos deve ser salvo ao sair do mundo (e carregado ao entrar no mundo)
 				}
 
 				PreventDuplicatesFromHistory: {
 					Label: Evitar Sufixos Duplicados
-					Tooltip: Se reforjar não deve gerar nenhum sufixo que já estejam no histórico de reforja
+					Tooltip: Se 'forjar novamente' não deve gerar nenhum sufixo já armazenado no histórico de sufixos
 				}
 
 				UndoButtonAnchor: {
 					Label: "Posição do 'Botão de Desfazer'"
-					Tooltip: Escolha a posição do botão de desfazer entre a área inferior ou direita do botão de reforja
+					Tooltip: Posição do botão de desfazer a última forja entre a área inferior ou direita do botão 'forjar novamente'
 				}
 			}
 
@@ -43,7 +43,7 @@ Mods: {
 		}
 
 		Common: {
-			UndoLastReforge: Desfazer ultima forja (-> {0})
+			UndoLastReforge: Desfazer a última forja (-> {0})
 			NoPrefix: Nenhum
 			PreviousPrefix: Sufixo anterior: {0}
 		}
