@@ -6,7 +6,7 @@ Mods: {
 
 				ReforgeHistoryLength: {
 					Label: Tamanho do Histórico de Reforja
-					Tooltip: Quantidade de prefixos que devem ser armazenados por item
+					Tooltip: Quantidade de sufixos que devem ser armazenados por item
 				}
 
 				ShowReforgeHistoryTooltip: {
@@ -16,7 +16,7 @@ Mods: {
 
 				ShowOrphanedReforgeHistoryTooltip: {
 					Label: Dica de Histórico de Reforja de Mods Desabilitados
-					Tooltip: Em adição à 'Dica de Histórico de Reforja', mostra os prefixos, ainda armazenados, de mods desabilitados
+					Tooltip: Em adição à 'Dica de Histórico de Reforja', mostra os sufixo, ainda armazenados, de mods desabilitados
 				}
 
 				SaveReforges: {
@@ -25,8 +25,8 @@ Mods: {
 				}
 
 				PreventDuplicatesFromHistory: {
-					Label: Evitar Prefixos Duplicados
-					Tooltip: Se reforjar não deve gerar nenhum prefixo que já estejam no histórico de reforja
+					Label: Evitar Sufixos Duplicados
+					Tooltip: Se reforjar não deve gerar nenhum sufixo que já estejam no histórico de reforja
 				}
 
 				UndoButtonAnchor: {
@@ -45,7 +45,7 @@ Mods: {
 		Common: {
 			UndoLastReforge: Desfazer ultima forja (-> {0})
 			NoPrefix: Nenhum
-			PreviousPrefix: Prefixo anterior: {0}
+			PreviousPrefix: Sufixo anterior: {0}
 		}
 	}
 }
