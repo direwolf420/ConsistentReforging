@@ -30,7 +30,7 @@ Mods: {
 				}
 
 				UndoButtonAnchor: {
-					Label: "Posizione 'Tasto annulla'"
+					Label: Posizione 'Tasto annulla'
 					Tooltip: Scegli se posizionare il tasto annulla sotto oppure a destra del tasto riforgiatura
 				}
 			}

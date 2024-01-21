@@ -13,3 +13,5 @@ This mod improves reforging by making it [b]less random[/b] without being too ch
 If you want to add support for different languages, you are welcome to contribute localizations here: [b][url=https://github.com/direwolf420/ConsistentReforging]GitHub[/url][/b]
 List of localization contributors:
 * Russian: [b]GodHybrid[/b]
+* Italian: [b]Sea Noodle[/b]
+* Brazilian Portuguese: [b]GuiSaiUwU[/b]

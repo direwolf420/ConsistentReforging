@@ -1,1 +1,4 @@
-* Added russian localization, thanks GodHybrid!
+v{ModVersion} has been published to {tMLBuildPurpose} tML v{tMLVersion}. Learn more @ {homepage}
+
+* Added italian localization, thanks Sea Noodle!
+* Added brazilian portuguese localization, thanks GuiSaiUwU!

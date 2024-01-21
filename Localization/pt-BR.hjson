@@ -30,7 +30,7 @@ Mods: {
 				}
 
 				UndoButtonAnchor: {
-					Label: "Posição do 'Botão de Desfazer'"
+					Label: Posição do 'Botão de Desfazer'
 					Tooltip: Posição do botão de desfazer a última forja entre a área inferior ou direita do botão 'forjar novamente'
 				}
 			}
