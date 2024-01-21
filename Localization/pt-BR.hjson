@@ -2,50 +2,50 @@ Mods: {
 	ConsistentReforging: {
 		Configs: {
 			Config: {
-				// DisplayName: Config
+				DisplayName: Configurações
 
 				ReforgeHistoryLength: {
-					// Label: Reforge History Length
-					// Tooltip: Amount of prefixes that should be stored per item
+					Label: Tamanho do Histórico de Sufixos
+					Tooltip: Quantidade de sufixos que devem ser armazenados por item
 				}
 
 				ShowReforgeHistoryTooltip: {
-					// Label: Reforge History Tooltip
-					// Tooltip: If reforge history should be displayed on the item tooltip (only in reforge UI)
+					Label: Histórico de Sufixos
+					Tooltip: Se o histórico de sufixos deve aparecer nas dicas do item (apenas na interface de forjar)
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					// Label: Orphaned Mod Reforge History Tooltip
-					// Tooltip: In addition to 'Reforge History Tooltip', shows disabled modded prefixes
+					Label: Histórico de Sufixos de Mods Desabilitados
+					Tooltip: Em adição à 'Histórico de Sufixos', mostra os sufixos, ainda armazenados, de mods desabilitados
 				}
 
 				SaveReforges: {
-					// Label: Save Reforge History
-					// Tooltip: If reforge history should be saved on world exit (and loaded on world join)
+					Label: Salvar Histórico de Sufixos
+					Tooltip: Se o histórico de sufixos deve ser salvo ao sair do mundo (e carregado ao entrar no mundo)
 				}
 
 				PreventDuplicatesFromHistory: {
-					// Label: Prevent Duplicate Prefixes
-					// Tooltip: If reforging should not give prefixes already in the reforge history
+					Label: Evitar Sufixos Duplicados
+					Tooltip: Se 'forjar novamente' não deve gerar nenhum sufixo que já encontra-se no histórico de sufixos
 				}
 
 				UndoButtonAnchor: {
-					// Label: "'Undo Button' Position"
-					// Tooltip: Choose between positioning the undo button below or right of the reforge button
+					Label: "Posição do 'Botão de Desfazer'"
+					Tooltip: Posição do botão de desfazer a última forja entre a área inferior ou direita do botão 'forjar novamente'
 				}
 			}
 
 			UndoButtonAnchorPosType: {
-				// Tooltip: ""
-				// Bottom.Label: Bottom
-				// Right.Label: Right
+				Tooltip: ""
+				Bottom.Label: Inferior
+				Right.Label: Direita
 			}
 		}
 
 		Common: {
-			// UndoLastReforge: Undo last reforge (-> {0})
-			// NoPrefix: None
-			// PreviousPrefix: Previous prefix: {0}
+			UndoLastReforge: Desfazer a última forja (-> {0})
+			NoPrefix: Nenhum
+			PreviousPrefix: Sufixo anterior: {0}
 		}
 	}
 }
