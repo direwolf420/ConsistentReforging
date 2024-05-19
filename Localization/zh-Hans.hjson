@@ -15,8 +15,8 @@ Mods: {
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					Label: 说明里显示已禁用Mod里的加成
-					Tooltip: 在说明里显示重铸历史时，是否显示禁用更改Mod的加成
+					Label: 显示已禁用模组里的加成
+					Tooltip: 在说明里显示重铸历史时，是否显示已禁用模组的加成
 				}
 
 				SaveReforges: {
@@ -30,7 +30,7 @@ Mods: {
 				}
 
 				UndoButtonAnchor: {
-					// Label: ‘撤回按钮’ 位置
+					Label: ‘撤回按钮’ 位置
 					Tooltip: 选择‘撤回’按钮位置在‘重铸’按钮的下方或右方
 				}
 			}
