@@ -16,12 +16,12 @@ Mods: {
 
 				ShowOrphanedReforgeHistoryTooltip: {
 					Label: 显示已禁用模组内的加成
-					Tooltip: 在说明里显示重铸历史时，是否显示已禁用模组的加成
+					Tooltip: 在说明里显示重铸历史时，是否显示已禁用模组的重铸加成
 				}
 
 				SaveReforges: {
 					Label: 保存重铸历史
-					Tooltip: 是否在保存世界时记录重铸历史
+					Tooltip: 是否在保存世界时记录重铸加成历史
 				}
 
 				PreventDuplicatesFromHistory: {
@@ -43,9 +43,9 @@ Mods: {
 		}
 
 		Common: {
-			UndoLastReforge: 撤回至上一个重铸加成效果 (-> {0})
-			NoPrefix: 无加成
-			PreviousPrefix: 上一个重铸效果：{0}
+			UndoLastReforge: 撤回至上一个重铸加成 (-> {0})
+			NoPrefix: 无重铸加成
+			PreviousPrefix: 上一个重铸加成：{0}
 		}
 	}
 }
