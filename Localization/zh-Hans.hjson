@@ -43,8 +43,8 @@ Mods: {
 		}
 
 		Common: {
-			UndoLastReforge: 撤回至上一个重铸效果 (-> {0})
-			NoPrefix: 无重铸
+			UndoLastReforge: 撤回至上一个重铸加成效果 (-> {0})
+			NoPrefix: 无加成
 			PreviousPrefix: 上一个重铸效果: {0}
 		}
 	}
