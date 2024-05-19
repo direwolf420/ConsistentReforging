@@ -15,7 +15,7 @@ Mods: {
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					Label: 显示已禁用模组里的加成
+					Label: 显示已禁用模组内的加成
 					Tooltip: 在说明里显示重铸历史时，是否显示已禁用模组的加成
 				}
 
@@ -45,7 +45,7 @@ Mods: {
 		Common: {
 			UndoLastReforge: 撤回至上一个重铸加成效果 (-> {0})
 			NoPrefix: 无加成
-			PreviousPrefix: 上一个重铸效果: {0}
+			PreviousPrefix: 上一个重铸效果：{0}
 		}
 	}
 }
