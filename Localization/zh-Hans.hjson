@@ -16,7 +16,7 @@ Mods: {
 
 				ShowOrphanedReforgeHistoryTooltip: {
 					Label: 显示已禁用模组的前缀
-					Tooltip: 在物品提示里显示重铸历史时，是否显示已禁用模组的物品前缀
+					Tooltip: 在物品提示里显示重铸历史时，是否包括已禁用模组的物品前缀
 				}
 
 				SaveReforges: {
