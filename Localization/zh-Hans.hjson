@@ -6,32 +6,32 @@ Mods: {
 
 				ReforgeHistoryLength: {
 					Label: 重铸历史长度
-					Tooltip: 重铸加成的历史记录长度
+					Tooltip: 物品前缀的历史记录长度
 				}
 
 				ShowReforgeHistoryTooltip: {
-					Label: 说明里显示重铸历史
-					Tooltip: 是否在重铸页面内显示重铸历史
+					Label: 在物品提示内显示重铸历史
+					Tooltip: 是否在打开重铸界面时，在物品提示内显示重铸历史
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					Label: 显示已禁用模组内的加成
-					Tooltip: 在说明里显示重铸历史时，是否显示已禁用模组的重铸加成
+					Label: 显示已禁用模组的前缀
+					Tooltip: 在物品提示里显示重铸历史时，是否显示已禁用模组的物品前缀
 				}
 
 				SaveReforges: {
 					Label: 保存重铸历史
-					Tooltip: 是否在保存世界时记录重铸加成历史
+					Tooltip: 是否在保存世界时记录物品前缀的历史
 				}
 
 				PreventDuplicatesFromHistory: {
-					Label: 避免重复重铸加成
-					Tooltip: 是否在重铸时避免历史记录里的重铸加成
+					Label: 避免重复历史记录内的前缀
+					Tooltip: 是否在重铸时避免历史记录里的物品前缀
 				}
 
 				UndoButtonAnchor: {
 					Label: ‘撤回按钮’ 位置
-					Tooltip: 选择‘撤回’按钮位置在‘重铸’按钮的下方或右方
+					Tooltip: 选择撤回按钮应该在重铸按钮的下方或右方
 				}
 			}
 
@@ -43,9 +43,9 @@ Mods: {
 		}
 
 		Common: {
-			UndoLastReforge: 撤回至上一个重铸加成 (-> {0})
-			NoPrefix: 无重铸加成
-			PreviousPrefix: 上一个重铸加成：{0}
+			UndoLastReforge: 撤回至上一个物品前缀 (-> {0})
+			NoPrefix: 无前缀
+			PreviousPrefix: 上一个物品前缀：{0}
 		}
 	}
 }
