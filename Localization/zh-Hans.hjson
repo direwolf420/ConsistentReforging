@@ -26,7 +26,7 @@ Mods: {
 
 				PreventDuplicatesFromHistory: {
 					Label: 避免重复历史记录内的前缀
-					Tooltip: 是否在重铸时避免历史记录里的物品前缀
+					Tooltip: 是否在重铸时避免历史记录内的物品前缀
 				}
 
 				UndoButtonAnchor: {
