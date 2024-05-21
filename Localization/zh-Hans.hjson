@@ -21,7 +21,7 @@ Mods: {
 
 				SaveReforges: {
 					Label: 保存重铸历史
-					Tooltip: 是否在保存世界时记录物品前缀的历史
+					Tooltip: 是否在保存世界时保存物品前缀的历史
 				}
 
 				PreventDuplicatesFromHistory: {
