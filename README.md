@@ -24,3 +24,4 @@ List of localization contributors:
 * Russian: **GodHybrid**
 * Italian: **Sea Noodle**
 * Brazilian Portuguese: **GuiSaiUwU**
+* Simplified Chinese: **Totally Normal Tree**

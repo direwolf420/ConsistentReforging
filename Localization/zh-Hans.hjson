@@ -2,7 +2,7 @@ Mods: {
 	ConsistentReforging: {
 		Configs: {
 			Config: {
-				// DisplayName: Config
+				DisplayName: 配置
 
 				ReforgeHistoryLength: {
 					Label: 重铸历史长度
@@ -36,7 +36,7 @@ Mods: {
 			}
 
 			UndoButtonAnchorPosType: {
-				// Tooltip: ""
+				Tooltip: ""
 				Bottom.Label: 下方
 				Right.Label: 右方
 			}
@@ -49,4 +49,3 @@ Mods: {
 		}
 	}
 }
-

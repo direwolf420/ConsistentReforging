@@ -1,4 +1,3 @@
 v{ModVersion} has been published to {tMLBuildPurpose} tML v{tMLVersion}. Learn more @ {ModHomepage}
 
-* Added italian localization, thanks Sea Noodle!
-* Added brazilian portuguese localization, thanks GuiSaiUwU!
+* Added simplified chinese localization, thanks Totally Normal Tree!

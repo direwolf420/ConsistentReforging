@@ -15,3 +15,4 @@ List of localization contributors:
 * Russian: [b]GodHybrid[/b]
 * Italian: [b]Sea Noodle[/b]
 * Brazilian Portuguese: [b]GuiSaiUwU[/b]
+* Simplified Chinese: [b]Totally Normal Tree[/b]
