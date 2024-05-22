@@ -5,47 +5,48 @@ Mods: {
 				// DisplayName: Config
 
 				ReforgeHistoryLength: {
-					// Label: Reforge History Length
-					// Tooltip: Amount of prefixes that should be stored per item
+					Label: 重铸历史长度
+					Tooltip: 前缀的历史记录长度
 				}
 
 				ShowReforgeHistoryTooltip: {
-					// Label: Reforge History Tooltip
-					// Tooltip: If reforge history should be displayed on the item tooltip (only in reforge UI)
+					Label: 在物品提示内显示重铸历史
+					Tooltip: 在打开重铸界面时，是否在物品提示内显示重铸历史
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					// Label: Orphaned Mod Reforge History Tooltip
-					// Tooltip: In addition to 'Reforge History Tooltip', shows disabled modded prefixes
+					Label: 显示已禁用模组的前缀
+					Tooltip: 在物品提示里显示重铸历史时，是否包括已禁用模组的前缀
 				}
 
 				SaveReforges: {
-					// Label: Save Reforge History
-					// Tooltip: If reforge history should be saved on world exit (and loaded on world join)
+					Label: 保存重铸历史
+					Tooltip: 是否在保存世界时保存前缀的历史
 				}
 
 				PreventDuplicatesFromHistory: {
-					// Label: Prevent Duplicate Prefixes
-					// Tooltip: If reforging should not give prefixes already in the reforge history
+					Label: 避免重复历史记录内的前缀
+					Tooltip: 是否在重铸时避免历史记录内的前缀
 				}
 
 				UndoButtonAnchor: {
-					// Label: "'Undo Button' Position"
-					// Tooltip: Choose between positioning the undo button below or right of the reforge button
+					Label: ‘撤回按钮’ 位置
+					Tooltip: 选择撤回按钮应该在重铸按钮的下方或右方
 				}
 			}
 
 			UndoButtonAnchorPosType: {
 				// Tooltip: ""
-				// Bottom.Label: Bottom
-				// Right.Label: Right
+				Bottom.Label: 下方
+				Right.Label: 右方
 			}
 		}
 
 		Common: {
-			// UndoLastReforge: Undo last reforge (-> {0})
-			// NoPrefix: None
-			// PreviousPrefix: Previous prefix: {0}
+			UndoLastReforge: 撤回至上一个前缀 (-> {0})
+			NoPrefix: 无前缀
+			PreviousPrefix: 上一个前缀：{0}
 		}
 	}
 }
+
