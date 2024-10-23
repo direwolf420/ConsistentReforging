@@ -6,4 +6,4 @@ es-ES, 0/18, 0%, missing 18
 ru-RU, 18/18, 100%, missing 0
 zh-Hans, 18/18, 100%, missing 0
 pt-BR, 18/18, 100%, missing 0
-pl-PL, 0/18, 0%, missing 18
+pl-PL, 18/18, 100%, missing 0

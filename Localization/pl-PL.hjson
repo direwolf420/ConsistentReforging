@@ -2,50 +2,50 @@ Mods: {
 	ConsistentReforging: {
 		Configs: {
 			Config: {
-				// DisplayName: Config
+				DisplayName: Konfiguracja
 
 				ReforgeHistoryLength: {
-					// Label: Reforge History Length
-					// Tooltip: Amount of prefixes that should be stored per item
+					Label: Długość Historii Przekuć
+					Tooltip: Ilość prefiksów które powinny zostać przechowane na przedmiot
 				}
 
 				ShowReforgeHistoryTooltip: {
-					// Label: Reforge History Tooltip
-					// Tooltip: If reforge history should be displayed on the item tooltip (only in reforge UI)
+					Label: Podpowiedź Historii Przekuć
+					Tooltip: Czy historia przekuć powinna zostać wyświetlona na podpowiedzi przedmiotu (tylko w interfejsie przekuwania)
 				}
 
 				ShowOrphanedReforgeHistoryTooltip: {
-					// Label: Orphaned Mod Reforge History Tooltip
-					// Tooltip: In addition to 'Reforge History Tooltip', shows disabled modded prefixes
+					Label: Podpowiedź Historii Przekuć Osieroconych Prefiksów
+					Tooltip: W dodatku do 'Podpowiedzi Histroii Przekuć', pokazuje wyłączone prefiksy z modyfikacji.
 				}
 
 				SaveReforges: {
-					// Label: Save Reforge History
-					// Tooltip: If reforge history should be saved on world exit (and loaded on world join)
+					Label: Zapisz Historię Przekuć
+					Tooltip: Czy historia przekuć powinna zostać zapisana przy wyjściu ze świata (i załadowana przy dołączeniu do świata)
 				}
 
 				PreventDuplicatesFromHistory: {
-					// Label: Prevent Duplicate Prefixes
-					// Tooltip: If reforging should not give prefixes already in the reforge history
+					Label: Zapobiegaj Duplikatom Prefiksów
+					Tooltip: Czy przekuwanie powinno nie dawać prefiksów, które już są w historii przekuwania
 				}
 
 				UndoButtonAnchor: {
-					// Label: "'Undo Button' Position"
-					// Tooltip: Choose between positioning the undo button below or right of the reforge button
+					Label: Pozycja Przycisku 'Cofnij'
+					Tooltip: Wybierz pomiędzy umieszczeniem przycisku cofnięcia na dół czy na prawo od przycisku przekuwania
 				}
 			}
 
 			UndoButtonAnchorPosType: {
-				// Tooltip: ""
-				// Bottom.Label: Bottom
-				// Right.Label: Right
+				Tooltip: ""
+				Bottom.Label: Dół
+				Right.Label: Prawo
 			}
 		}
 
 		Common: {
-			// UndoLastReforge: Undo last reforge (-> {0})
-			// NoPrefix: None
-			// PreviousPrefix: Previous prefix: {0}
+			UndoLastReforge: Cofnij ostatnie przekucie (-> {0})
+			NoPrefix: Brak
+			PreviousPrefix: Poprzedni prefiks: {0}
 		}
 	}
 }
