@@ -17,3 +17,4 @@ List of localization contributors:
 * Polish: [b]Placuch[/b]
 * Brazilian Portuguese: [b]GuiSaiUwU[/b]
 * Simplified Chinese: [b]Totally Normal Tree[/b]
+* German: Lighty

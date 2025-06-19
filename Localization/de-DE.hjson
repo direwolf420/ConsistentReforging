@@ -1,55 +1,51 @@
 Mods: {
-    ConsistentReforging: {
-        Configs: {
-            Config: {
-                DisplayName: Konfiguration
+	ConsistentReforging: {
+		Configs: {
+			Config: {
+				DisplayName: Konfiguration
 
-                ReforgeHistoryLength: {
-                    Label: Neuschmiede-Verlaufslänge
-                    Tooltip: Anzahl der Präfixe, die pro Item gespeichert werden sollen
-                }
+				ReforgeHistoryLength: {
+					Label: Nachschmiede-Verlaufslänge
+					Tooltip: Anzahl der Präfixe, die pro Item gespeichert werden sollen
+				}
 
-                ShowReforgeHistoryTooltip: {
-                    Label: Neuschmiede-Verlaufstooltip
-                    Tooltip: Ob der Neuschmiede-Verlauf im Item-Tooltip angezeigt werden soll (nur im Neuschmiede-UI)
-                }
+				ShowReforgeHistoryTooltip: {
+					Label: Nachschmiede-Verlaufstooltip
+					Tooltip: Ob der Nachschmiede-Verlauf im Item-Tooltip angezeigt werden soll (nur im Nachschmiede-UI)
+				}
 
-                ShowOrphanedReforgeHistoryTooltip: {
-                    Label: Tooltip für verwaiste Mod-Neuschmiede-Verläufe
-                    Tooltip: Zusätzlich zum 'Neuschmiede-Verlaufstooltip' werden deaktivierte modifizierte Präfixe angezeigt
-                }
+				ShowOrphanedReforgeHistoryTooltip: {
+					Label: Tooltip für verwaiste Mod-Nachschmiede-Verläufe
+					Tooltip: Zusätzlich zum 'Nachschmiede-Verlaufstooltip' werden deaktivierte Modifikationen angezeigt
+				}
 
-                SaveReforges: {
-                    Label: Neuschmiede-Verlauf speichern
-                    Tooltip: Ob der Neuschmiede-Verlauf beim Weltverlassen gespeichert und beim Beitritt geladen werden soll
-                }
+				SaveReforges: {
+					Label: Nachschmiede-Verlauf speichern
+					Tooltip: Ob der Nachschmiede-Verlauf beim Weltverlassen gespeichert und beim Beitritt geladen werden soll
+				}
 
-                PreventDuplicatesFromHistory: {
-                    Label: Doppelte Präfixe verhindern
-                    Tooltip: Ob beim Neuschmieden keine bereits im Verlauf vorhandenen Präfixe vergeben werden sollen
-                }
+				PreventDuplicatesFromHistory: {
+					Label: Doppelte Präfixe verhindern
+					Tooltip: Ob beim Nachschmieden keine bereits im Verlauf vorhandene Modifikationen vergeben werden sollen
+				}
 
-                UndoButtonAnchor: {
-                    Label: 'Rückgängig'-Button Position
-                    Tooltip: Wählen Sie, ob der 'Rückgängig'-Button unter oder rechts vom Neuschmiede-Button positioniert werden soll
-                }
-            }
+				UndoButtonAnchor: {
+					Label: "'Rückgängig'-Button Position"
+					Tooltip: Wählen Sie, ob der 'Rückgängig'-Button unter oder rechts vom Nachschmiede-Button positioniert werden soll
+				}
+			}
 
-            UndoButtonAnchorPosType: {
-                Tooltip: 
-                Bottom: {
-                    Label: Unten
-                }
-                Right: {
-                    Label: Rechts
-                }
-            }
-        }
+			UndoButtonAnchorPosType: {
+				Tooltip: ""
+				Bottom.Label: Unten
+				Right.Label: Rechts
+			}
+		}
 
-        Common: {
-            UndoLastReforge: Letzte Neuschmiede rückgängig machen (-> {0})
-            NoPrefix: Keines
-            PreviousPrefix: Vorheriges Präfix: {0}
-        }
-    }
+		Common: {
+			UndoLastReforge: Letzte Nachschmiede rückgängig machen (-> {0})
+			NoPrefix: Keine
+			PreviousPrefix: Vorherige Modifikation: {0}
+		}
+	}
 }
